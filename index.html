@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿼드링크(주) | QuadLink Inc - ICT & AV 시스템 통합 전문 기업</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ql: {
+                            blue: '#0052CC',
+                            cyan: '#00A3FF',
+                            navy: '#0A192F',
+                            dark: '#030816',
+                            light: '#F4F7FB',
+                            gray: '#64748B'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a192f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0052CC;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00A3FF;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #00A3FF 0%, #0052CC 50%, #60A5FA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .glass-card-dark {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .pulse-ring {
+            box-shadow: 0 0 0 0 rgba(0, 163, 255, 0.7);
+            animation: pulse-ring 2s infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(0, 163, 255, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 163, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 163, 255, 0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-ql-blue selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo (Original Horizontal Layout - Zero Distortion) -->
+            <a href="#hero" class="flex items-center group py-1 shrink-0">
+                <img src="회사 로고 이미지.jpg" alt="QuadLink Logo" class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]">
+            </a>
+
+            <!-- Desktop Menu Navigation -->
+            <nav class="hidden md:flex items-center space-x-7 font-medium text-sm text-slate-600">
+                <a href="#about" class="hover:text-ql-blue transition-colors py-1">회사 소개</a>
+                <a href="#services" class="hover:text-ql-blue transition-colors py-1">주요 서비스</a>
+                <a href="#ai-consultant" class="text-ql-blue font-bold flex items-center gap-1.5 py-1">
+                    <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i> AI 맞춤 설계
+                </a>
+                <a href="#products" class="hover:text-ql-blue transition-colors py-1">취급 제품</a>
+                <a href="#work" class="hover:text-ql-blue transition-colors py-1">실적 및 연혁</a>
+                <a href="#careers" class="hover:text-ql-blue transition-colors py-1">인재상</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="hidden md:flex items-center gap-3">
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-ql-blue hover:bg-blue-700 text-white font-medium text-sm transition-all shadow-md shadow-blue-500/20 hover:shadow-blue-500/40 flex items-center gap-2">
+                    <span>문의하기</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block py-2 text-slate-700 font-medium hover:text-ql-blue border-b border-slate-100">회사 소개</a>
+            <a href="#services" class="block py-2 text-slate-700 font-medium hover:text-ql-blue border-b border-slate-100">주요 서비스</a>
+            <a href="#ai-consultant" class="block py-2 text-ql-blue font-bold border-b border-slate-100 flex items-center gap-2">
+                <i class="fa-solid fa-wand-magic-sparkles text-amber-500"></i> AI 맞춤 설계
+            </a>
+            <a href="#products" class="block py-2 text-slate-700 font-medium hover:text-ql-blue border-b border-slate-100">취급 제품</a>
+            <a href="#work" class="block py-2 text-slate-700 font-medium hover:text-ql-blue border-b border-slate-100">실적 및 연혁</a>
+            <a href="#careers" class="block py-2 text-slate-700 font-medium hover:text-ql-blue border-b border-slate-100">인재상</a>
+            <a href="#contact" class="block w-full text-center mt-3 py-3 rounded-lg bg-ql-blue text-white font-medium">문의하기</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-32 bg-ql-dark text-white overflow-hidden min-h-[90vh] flex items-center">
+        <div class="absolute inset-0 opacity-20 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-ql-cyan/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-ql-blue/30 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="lg:col-span-7 space-y-8">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-xs font-semibold text-ql-cyan tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-ql-cyan animate-pulse"></span>
+                        ICT & AV System Integration Leader
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        연결의 완성, <br>
+                        비즈니스의 진화, <br>
+                        <span class="gradient-text">쿼드링크</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-lg sm:text-xl font-light leading-relaxed max-w-2xl">
+                        풍부한 현장 경험과 노하우로 최적화된 ICT 및 AV 시스템 환경을 구축합니다.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#contact" class="px-7 py-3.5 rounded-xl bg-ql-blue hover:bg-blue-600 text-white font-bold text-base shadow-lg shadow-blue-500/25 transition-all flex items-center gap-2">
+                            <span>문의하기</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#ai-consultant" class="px-7 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-amber-400 border border-amber-500/40 font-semibold text-base transition-all flex items-center gap-2.5">
+                            <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i>
+                            <span>AI 맞춤 설계 받기</span>
+                        </a>
+                    </div>
+
+                    <!-- Qualitative Key Strengths (No Hard Numbers) -->
+                    <div class="grid grid-cols-3 gap-6 pt-6 border-t border-slate-800">
+                        <div>
+                            <div class="text-xl font-bold text-white font-outfit">다년간 축적</div>
+                            <div class="text-xs text-slate-400 mt-1">전문 현장 노하우</div>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold text-white font-outfit">다수 프로젝트</div>
+                            <div class="text-xs text-slate-400 mt-1">성공적 구축 완료</div>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold text-white font-outfit">최상 품질</div>
+                            <div class="text-xs text-slate-400 mt-1">신뢰 기반 무결점 가동</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Hero Visual Graphic -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-ql-cyan to-ql-blue opacity-50 blur-lg"></div>
+                        <div class="relative rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80" alt="스마트 회의실 구축" class="w-full h-80 object-cover opacity-85 hover:scale-105 transition-transform duration-700">
+                            
+                            <div class="absolute top-4 left-4 glass-card-dark p-3 rounded-xl flex items-center gap-3 border border-white/10 shadow-lg">
+                                <div class="w-10 h-10 rounded-lg bg-ql-blue/30 flex items-center justify-center text-ql-cyan">
+                                    <i class="fa-solid fa-video text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">화상회의 솔루션</div>
+                                    <div class="text-sm font-bold text-white">4K Ultra HD & AI Audio</div>
+                                </div>
+                            </div>
+
+                            <div class="absolute bottom-4 right-4 glass-card-dark p-3 rounded-xl flex items-center gap-3 border border-white/10 shadow-lg">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-500/30 flex items-center justify-center text-emerald-400">
+                                    <i class="fa-solid fa-shield-halved text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400">유지보수 관제</div>
+                                    <div class="text-sm font-bold text-white">24/7 실시간 기술 지원</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-ql-blue font-semibold text-sm tracking-widest uppercase">About QuadLink</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">통합 AV & ICT 인프라 전문 기업</h2>
+                <div class="w-16 h-1 bg-ql-blue mx-auto rounded-full"></div>
+                <p class="text-slate-600 leading-relaxed text-base sm:text-lg pt-2">
+                    쿼드링크는 화상회의 및 네트워크 인프라 설계, 시공, 유지보수 전문 기업입니다.<br class="hidden sm:inline"> 
+                    다년간 축적된 현장 경험과 검증된 기술력을 바탕으로, 고객의 비즈니스 환경에 최적화된 통합 AV 솔루션을 제공하여 업무 효율성을 극대화합니다.
+                </p>
+            </div>
+
+            <!-- 3 Core Values Cards -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/80 hover:border-ql-blue/50 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 text-ql-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-ql-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">전문 엔지니어링 노하우</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        다년간 축적된 엔지니어링 노하우를 바탕으로 복잡한 현장 조건에서도 최고의 품질과 무결점 시스템을 구성합니다.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/80 hover:border-ql-blue/50 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 text-ql-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-ql-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">맞춤형 통합 솔루션</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        임원회의실, 대강당, 통합 상황실 등 사용 목적에 맞춘 정밀 설계와 최신 글로벌 브랜드 장비를 최적으로 배치합니다.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200/80 hover:border-ql-blue/50 hover:shadow-xl transition-all duration-300 group">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 text-ql-blue flex items-center justify-center text-2xl mb-6 group-hover:bg-ql-blue group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">신속한 유지보수 지원</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        장애 발생을 예방하는 체계적인 사전 점검과 문제 발생 시 즉각 응대하는 체계적인 사후 기술 지원 서비스를 제공합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 bg-slate-100 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-ql-blue font-semibold text-sm tracking-widest uppercase">Key Services</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">주요 서비스 및 핵심 솔루션</h2>
+                </div>
+                <p class="text-slate-500 text-sm max-w-md mt-4 md:mt-0">
+                    쿼드링크는 고품질 영상, 음향 및 스마트 네트워크 구축에 필요한 핵심 5대 영역의 엔지니어링 서비스를 전문적으로 제공합니다.
+                </p>
+            </div>
+
+            <!-- Service Items Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-200 flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="w-12 h-12 rounded-lg bg-blue-50 text-ql-blue flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">화상회의 시스템 설계</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            공간 규모와 업무 특성에 맞춘 최적의 화상회의 환경 구성
+                        </p>
+                    </div>
+                    <div class="px-8 py-4 bg-slate-50 border-t border-slate-100 text-xs font-semibold text-ql-blue flex items-center justify-between">
+                        <span>Video Conferencing Solution</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-200 flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="w-12 h-12 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">A/V 시스템 구축</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            회의실, 강당 등 다양한 공간 목적에 부합하는 고품질 영상 및 음향 시스템 설계 및 시공
+                        </p>
+                    </div>
+                    <div class="px-8 py-4 bg-slate-50 border-t border-slate-100 text-xs font-semibold text-indigo-600 flex items-center justify-between">
+                        <span>Audio & Visual System Integration</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-200 flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="w-12 h-12 rounded-lg bg-cyan-50 text-cyan-600 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-desktop"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">LED 전광판 시공</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            선명한 화질과 뛰어난 내구성을 갖춘 맞춤형 고해상도 LED 디스플레이 솔루션 제공
+                        </p>
+                    </div>
+                    <div class="px-8 py-4 bg-slate-50 border-t border-slate-100 text-xs font-semibold text-cyan-600 flex items-center justify-between">
+                        <span>High-Resolution LED Display</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-200 flex flex-col justify-between">
+                    <div class="p-8">
+                        <div class="w-12 h-12 rounded-lg bg-sky-50 text-sky-600 flex items-center justify-center text-xl mb-6">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">상황실 구축</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            실시간 모니터링과 신속한 의사결정을 지원하는 직관적인 통합 관제 환경 조성
+                        </p>
+                    </div>
+                    <div class="px-8 py-4 bg-slate-50 border-t border-slate-100 text-xs font-semibold text-sky-600 flex items-center justify-between">
+                        <span>Integrated Control Room</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-slate-200 flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                    <div class="p-8 flex flex-col sm:flex-row gap-6 items-start">
+                        <div class="w-12 h-12 shrink-0 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">시스템 통합 유지보수</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                장애 발생을 예방하는 체계적인 사전 점검 및 신속한 사후 기술 지원으로 365일 무결점 비즈니스 가동을 보장합니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-8 py-4 bg-slate-50 border-t border-slate-100 text-xs font-semibold text-teal-600 flex items-center justify-between">
+                        <span>System Maintenance & Technical Support</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI SMART CONSULTANT SECTION -->
+    <section id="ai-consultant" class="py-24 bg-gradient-to-br from-slate-900 via-ql-dark to-slate-950 text-white relative overflow-hidden">
+        <div class="absolute -top-32 -left-32 w-80 h-80 bg-ql-blue/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 font-bold text-xs uppercase tracking-widest">
+                    <i class="fa-solid fa-robot"></i> Powered by Gemini 3.1 AI
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Gemini AI 맞춤 솔루션 컨설팅</h2>
+                <div class="w-16 h-1 bg-amber-500 mx-auto rounded-full"></div>
+                <p class="text-slate-300 text-base">
+                    공간 종류, 수용 인원 및 희망 기능을 선택하시면, Google Gemini AI가 쿼드링크의 엔지니어링 표준 데이터를 기반으로 실질적인 맞춤 장비 구성 및 컨설팅 제안서를 실시간으로 생성해 드립니다.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <!-- AI Input Form Card -->
+                <div class="lg:col-span-5 bg-slate-800/80 border border-slate-700/80 p-6 sm:p-8 rounded-3xl shadow-xl backdrop-blur-md">
+                    <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-amber-400"></i>
+                        <span>공간 조건 및 필요 기능 선택</span>
+                    </h3>
+
+                    <form id="aiConsultantForm" onsubmit="generateAISolution(event)" class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">공간 유형 (Space Type)</label>
+                            <select id="aiSpaceType" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-amber-400 transition-colors text-sm">
+                                <option value="개인형 및 임원실 (Personal & Executive Room)">개인형 및 임원실 (1~2인)</option>
+                                <option value="중소형 회의실 (Huddle & Meeting Room)" selected>중소형 회의실 (4~10인)</option>
+                                <option value="대형 이사회실 (Boardroom)">대형 이사회실 (12~25인)</option>
+                                <option value="통합 상황실 / 관제센터 (Control Room)">통합 상황실 / 관제센터 (24/7)</option>
+                                <option value="대강당 및 세미나 홀 (Auditorium & Hall)">대강당 및 세미나 홀 (50인 이상)</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">주요 목적</label>
+                                <select id="aiPrimaryPurpose" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-amber-400 transition-colors text-sm">
+                                    <option value="화상회의 (Teams/Zoom/Webex)" selected>화상회의 시스템</option>
+                                    <option value="고음향/고화질 발표">고음향/고화질 발표</option>
+                                    <option value="초고해상도 비디오월 관제">비디오월 관제</option>
+                                    <option value="통합 제어 및 자동화">통합 제어/자동화</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">예산 규모</label>
+                                <select id="aiBudget" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-amber-400 transition-colors text-sm">
+                                    <option value="실속형 (Essential Kit)">실속형 (Basic)</option>
+                                    <option value="표준 엔터프라이즈 (Standard)" selected>표준 엔터프라이즈</option>
+                                    <option value="프리미엄 최고급 (Executive Flagship)">프리미엄 플래그십</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">추가 요청 / 특이사항 (선택)</label>
+                            <textarea id="aiCustomNotes" rows="3" placeholder="예: 천장 마이크 시공 필요, 무선 프리젠테이션 지원 희망, Cisco 솔루션 선호 등" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition-colors text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" id="aiGenerateBtn" class="w-full py-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-base transition-all shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>Gemini AI 제안서 생성하기</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- AI Output Report Box -->
+                <div class="lg:col-span-7 bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-3xl shadow-2xl relative min-h-[480px] flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-9 h-9 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg">
+                                    <i class="fa-solid fa-file-invoice"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-base">쿼드링크 AI 엔지니어링 보고서</h4>
+                                    <p class="text-xs text-slate-400">QuadLink System Architecture Recommendation</p>
+                                </div>
+                            </div>
+
+                            <!-- TTS Voice Play Button -->
+                            <button id="ttsPlayBtn" onclick="playAITTS()" class="hidden px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 text-xs font-semibold border border-amber-500/30 transition-all flex items-center gap-2">
+                                <i id="ttsIcon" class="fa-solid fa-volume-high"></i>
+                                <span id="ttsText">음성 리포트 듣기</span>
+                            </button>
+                        </div>
+
+                        <!-- Initial Placeholder -->
+                        <div id="aiPlaceholder" class="py-16 text-center text-slate-500 space-y-3">
+                            <i class="fa-solid fa-microchip text-4xl text-slate-700"></i>
+                            <p class="text-sm">좌측 조건 선택 후 <span class="text-amber-400 font-semibold">[Gemini AI 제안서 생성하기]</span> 버튼을 누르시면,<br> AI가 최적 장비 구성안 및 조감도 이미지를 생성합니다.</p>
+                        </div>
+
+                        <!-- Loading Indicator -->
+                        <div id="aiLoading" class="hidden py-16 text-center space-y-4">
+                            <div class="inline-block w-12 h-12 border-4 border-amber-400/30 border-t-amber-400 rounded-full animate-spin"></div>
+                            <p class="text-amber-400 font-semibold text-sm animate-pulse">Gemini AI가 최적의 시스템 구성을 분석 및 3D 이미지를 생성 중입니다...</p>
+                        </div>
+
+                        <!-- Result Content Container -->
+                        <div id="aiResultContainer" class="hidden space-y-6">
+                            <!-- Text Response Markdown Box -->
+                            <div id="aiResultText" class="text-slate-300 text-sm leading-relaxed space-y-3 prose prose-invert max-w-none"></div>
+
+                            <!-- Gemini Generated Image Box -->
+                            <div id="aiImageBox" class="hidden border border-slate-800 rounded-2xl overflow-hidden bg-slate-950 p-3">
+                                <div class="text-xs font-semibold text-amber-400 mb-2 flex items-center gap-1.5">
+                                    <i class="fa-solid fa-image"></i> AI 생성 3D 인테리어 & AV 배치 컨셉 이미지
+                                </div>
+                                <img id="aiGeneratedImg" src="" alt="AI Meeting Room Concept" class="w-full h-56 sm:h-64 object-cover rounded-xl border border-slate-800">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="aiReportFooter" class="hidden pt-4 border-t border-slate-800 text-xs text-slate-500 flex justify-between items-center">
+                        <span>* 본 보고서는 Gemini 3.1 AI 엔진을 통해 자동 생성된 추천안입니다.</span>
+                        <a href="#contact" class="text-amber-400 hover:underline font-semibold">이 구성으로 정식 견적 요청 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS / PARTNERS SECTION -->
+    <section id="products" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-ql-blue font-semibold text-sm tracking-widest uppercase">Global Partner Solutions</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">취급 제품 및 브랜드 파트너십</h2>
+                <div class="w-16 h-1 bg-ql-blue mx-auto rounded-full"></div>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Cisco, Poly, Logitech, Neat, Pexip 등 세계 최고 수준의 검증된 브랜드 장비만을 취급하여 무결점 시스템을 구축합니다.
+                </p>
+            </div>
+
+            <!-- Partner Brand Logos Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 mb-20">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-ql-blue hover:bg-white hover:shadow-lg transition-all text-center group">
+                    <div class="h-16 flex items-center justify-center mb-3">
+                        <span class="text-2xl font-black font-outfit text-slate-700 group-hover:text-ql-blue transition-colors tracking-widest">CISCO</span>
+                    </div>
+                    <div class="text-xs font-semibold text-slate-500">Webex & Room Kit Series</div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-ql-blue hover:bg-white hover:shadow-lg transition-all text-center group">
+                    <div class="h-16 flex items-center justify-center mb-3">
+                        <span class="text-2xl font-black font-outfit text-slate-700 group-hover:text-ql-blue transition-colors tracking-widest">poly</span>
+                    </div>
+                    <div class="text-xs font-semibold text-slate-500">Studio & Video Bars</div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-ql-blue hover:bg-white hover:shadow-lg transition-all text-center group">
+                    <div class="h-16 flex items-center justify-center mb-3">
+                        <span class="text-2xl font-black font-outfit text-slate-700 group-hover:text-ql-blue transition-colors tracking-widest">logitech</span>
+                    </div>
+                    <div class="text-xs font-semibold text-slate-500">Rally Bar & Tap Controller</div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-ql-blue hover:bg-white hover:shadow-lg transition-all text-center group">
+                    <div class="h-16 flex items-center justify-center mb-3">
+                        <span class="text-2xl font-black font-outfit text-slate-700 group-hover:text-ql-blue transition-colors tracking-widest">neat.</span>
+                    </div>
+                    <div class="text-xs font-semibold text-slate-500">Neat Frame & Board</div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-ql-blue hover:bg-white hover:shadow-lg transition-all text-center group col-span-2 md:col-span-1">
+                    <div class="h-16 flex items-center justify-center mb-3">
+                        <span class="text-2xl font-black font-outfit text-slate-700 group-hover:text-ql-blue transition-colors tracking-widest">pexip[ ]</span>
+                    </div>
+                    <div class="text-xs font-semibold text-slate-500">Interoperability Platform</div>
+                </div>
+            </div>
+
+            <!-- ROOM SCALE CUSTOM SOLUTIONS SECTION (Replaces old table) -->
+            <div class="pt-8 border-t border-slate-200">
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                    <span class="text-ql-blue font-semibold text-xs tracking-widest uppercase">Customized AV Integration</span>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">회의실 규모별 맞춤 설계 및 시공 솔루션</h3>
+                    <p class="text-slate-600 text-sm">
+                        쿼드링크는 공간의 크기와 사용 인원에 가장 적합한 디스플레이, 음향 마이크 및 제어 시스템을 정밀 설계합니다.
+                    </p>
+                </div>
+
+                <!-- 4 Scale Cards Grid with Matching Images -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- 1. Personal Room -->
+                    <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:border-ql-blue hover:shadow-xl transition-all flex flex-col justify-between group">
+                        <div>
+                            <div class="relative h-44 overflow-hidden bg-slate-900">
+                                <img src="개인.jpg" alt="개인형 회의실 및 임원실" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 bg-white">
+                                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-ql-blue text-white text-xs font-bold">1~2인 인원</div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-lg font-bold text-slate-900 mb-2">개인형 (Personal Room)</h4>
+                                <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                    임원실 및 개인 데스크 공간에 최적화된 올인원 터치 디스플레이와 노이즈 캔슬링 마이크 솔루션.
+                                </p>
+                                <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-200/80 pt-3">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ql-blue"></i> Cisco Desk / Neat Frame</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-ql-blue"></i> 원터치 회의 참가 및 화이트보드</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Huddle Room -->
+                    <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:border-ql-blue hover:shadow-xl transition-all flex flex-col justify-between group">
+                        <div>
+                            <div class="relative h-44 overflow-hidden bg-slate-900">
+                                <img src="소형.jpg" alt="소형 회의실" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 bg-white">
+                                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-indigo-600 text-white text-xs font-bold">3~5인 소형</div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-lg font-bold text-slate-900 mb-2">소형 회의실 (Huddle Room)</h4>
+                                <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                    소규모 팀 협업을 위한 지능형 올인원 비디오바 및 무선 콘텐츠 공유 구축.
+                                </p>
+                                <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-200/80 pt-3">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-600"></i> Poly Studio / Logitech Rally Bar Mini</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-indigo-600"></i> AI 프레임 줌 & 광각 카메라</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Medium Meeting Room -->
+                    <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:border-ql-blue hover:shadow-xl transition-all flex flex-col justify-between group">
+                        <div>
+                            <div class="relative h-44 overflow-hidden bg-slate-900">
+                                <img src="중형.jpg" alt="중형 회의실" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 bg-white">
+                                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-cyan-600 text-white text-xs font-bold">6~12인 중형</div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-lg font-bold text-slate-900 mb-2">중형 회의실 (Medium Room)</h4>
+                                <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                    광학 PTZ 카메라와 천장 매립형 천장 마이크(Ceiling Mic Array) 연동 음향 아키텍처.
+                                </p>
+                                <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-200/80 pt-3">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600"></i> 광학 PTZ 트래킹 카메라</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan-600"></i> 음영 없는 천장 마이크 음향 보정</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Large Boardroom & Hall -->
+                    <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:border-ql-blue hover:shadow-xl transition-all flex flex-col justify-between group">
+                        <div>
+                            <div class="relative h-44 overflow-hidden bg-slate-900">
+                                <img src="대형.jpg" alt="대형 이사회실 및 강당" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 bg-white">
+                                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-sky-700 text-white text-xs font-bold">15인 이상 대형</div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="text-lg font-bold text-slate-900 mb-2">대형 이사회실 & 강당</h4>
+                                <p class="text-slate-600 text-xs leading-relaxed mb-4">
+                                    멀티 디스플레이, DSP 음향 믹서 및 터치 패널 통합 자동 제어 시스템 설계.
+                                </p>
+                                <ul class="text-xs text-slate-600 space-y-2 border-t border-slate-200/80 pt-3">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-700"></i> 대형 비디오월 & 라인어레이 스피커</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-sky-700"></i> 원터치 시나리오 자동 통합제어</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTORY & WORK PORTFOLIO -->
+    <section id="work" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                <div>
+                    <span class="text-ql-blue font-semibold text-sm tracking-widest uppercase">History & Work</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mt-2">실적 및 회사 연혁</h2>
+                </div>
+                <p class="text-sm font-semibold text-ql-blue bg-blue-50 px-4 py-2 rounded-xl border border-blue-100 mt-4 md:mt-0">
+                    <i class="fa-solid fa-award mr-1"></i> 다수의 기업 및 기관 프로젝트의 성공적 수행을 통한 실무 역량 검증
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12">
+                <!-- Left Timeline Column (Preserved Exactly) -->
+                <div class="lg:col-span-5 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-8 flex items-center gap-3">
+                            <i class="fa-solid fa-timeline text-ql-blue"></i>
+                            <span>회사 핵심 연혁</span>
+                        </h3>
+
+                        <div class="relative border-l-2 border-slate-200 ml-4 space-y-8">
+                            <div class="relative pl-6">
+                                <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-ql-blue border-4 border-white"></div>
+                                <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-100 text-ql-blue">2026.09</span>
+                                <h4 class="text-lg font-bold text-slate-900 mt-2">ICT · AV 엔지니어링 전문 기업 쿼드링크 설립</h4>
+                                <p class="text-slate-600 text-sm mt-1 leading-relaxed">
+                                    화상회의, A/V 시스템 구축, LED 전광판 및 상황실 구축 통합 솔루션 전문 법인 출범.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 p-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-500 text-xs text-center">
+                        <i class="fa-solid fa-circle-info text-ql-blue mr-1"></i>
+                        ※ 세부 프로젝트 구축 사례는 추후 업데이트 예정입니다.
+                    </div>
+                </div>
+
+                <!-- Right Portfolio Cards Column (Updated Images) -->
+                <div class="lg:col-span-7 grid sm:grid-cols-2 gap-6">
+                    <!-- 1. 스마트 화상 회의실 구축 -->
+                    <div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-56 overflow-hidden bg-slate-900">
+                                <img src="스마트 화상 회의실 구축.jpg" alt="스마트 화상 회의실 구축" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 bg-white">
+                                <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-ql-blue text-white text-xs font-semibold shadow-md">Smart Video Conference</div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-bold text-slate-900 text-lg group-hover:text-ql-blue transition-colors">스마트 화상 회의실 구축</h4>
+                                <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                                    최신 4K Ultra HD 카메라, 천장 매립형 음향 시스템(Ceiling Mic) 및 MS Teams / Zoom 연동 올인원 화상회의 구축.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. AV시스템 (상황실/관제센터) 시공 -->
+                    <div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="relative h-56 overflow-hidden bg-slate-900">
+                                <img src="av시스템 시공.jpg" alt="AV시스템 시공" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 bg-white">
+                                <div class="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-900/90 text-ql-cyan text-xs font-semibold backdrop-blur-md border border-slate-700">Control Room Integration</div>
+                            </div>
+                            <div class="p-6">
+                                <h4 class="font-bold text-slate-900 text-lg group-hover:text-ql-blue transition-colors">AV시스템 (상황실/관제센터) 시공</h4>
+                                <p class="text-slate-600 text-sm mt-2 leading-relaxed">
+                                    24/7 실시간 관제를 위한 고해상도 비디오월, 심리스 메트릭스 스위처 및 터치 기반 통합 제어 인프라 구축.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAREERS SECTION -->
+    <section id="careers" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-ql-blue font-semibold text-sm tracking-widest uppercase">Careers & Core Talent</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">필요 인재상</h2>
+                <div class="w-16 h-1 bg-ql-blue mx-auto rounded-full"></div>
+                <p class="text-slate-600 text-base">
+                    쿼드링크와 함께 기술적 깊이와 소통 능력으로 미래를 만들어 갈 인재를 모십니다.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 text-center hover:bg-gradient-to-b hover:from-white hover:to-blue-50/50 hover:border-ql-blue/40 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-100 text-ql-blue flex items-center justify-center text-2xl mx-auto mb-6">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <span class="text-xs font-bold text-ql-blue tracking-wider uppercase">Expertise</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1 mb-3">전문성</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        AV/ICT 기술에 대한 깊은 이해와 문제 해결 능력
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 text-center hover:bg-gradient-to-b hover:from-white hover:to-blue-50/50 hover:border-ql-blue/40 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-100 text-ql-blue flex items-center justify-center text-2xl mx-auto mb-6">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <span class="text-xs font-bold text-ql-blue tracking-wider uppercase">Communication</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1 mb-3">소통</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        고객의 니즈를 파악하고 팀원과 협업하는 소통 능력
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-200 text-center hover:bg-gradient-to-b hover:from-white hover:to-blue-50/50 hover:border-ql-blue/40 transition-all duration-300">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-100 text-ql-blue flex items-center justify-center text-2xl mx-auto mb-6">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <span class="text-xs font-bold text-ql-blue tracking-wider uppercase">Responsibility</span>
+                    <h3 class="text-xl font-bold text-slate-900 mt-1 mb-3">책임감</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        현장 설계부터 구축까지 완수하는 책임감
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT US SECTION -->
+    <section id="contact" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                <!-- Left Info Box -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-ql-cyan font-semibold text-sm tracking-widest uppercase">Contact Us</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold mt-2">고객 문의</h2>
+                        <p class="text-slate-400 text-sm mt-4 leading-relaxed">
+                            도입을 원하시는 시스템이나 궁금한 점을 남겨주시면 신속하고 정확하게 답변해 드리겠습니다.
+                        </p>
+                    </div>
+
+                    <div class="space-y-6 pt-2">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 text-ql-cyan flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 uppercase font-semibold">본사 위치</div>
+                                <div class="text-base font-semibold text-white mt-1">(14303) 경기도 광명시 오리로651번길 8, 현대테라타워 741호</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 text-ql-cyan flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 uppercase font-semibold">고객 지원 전용 대표전화</div>
+                                <div class="text-base font-semibold text-white mt-1">0504-407-7077</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-slate-800 text-ql-cyan flex items-center justify-center text-lg shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400 uppercase font-semibold">이메일 문의</div>
+                                <div class="text-base font-semibold text-white mt-1">jb.bae@quadlink.kr</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form Box -->
+                <div class="lg:col-span-7 bg-slate-800/90 border border-slate-700/80 p-8 sm:p-10 rounded-3xl shadow-2xl backdrop-blur-md">
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">성함 / 담당자명 *</label>
+                                <input type="text" required placeholder="홍길동 팀장" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ql-cyan transition-colors text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">회사명 / 소속 *</label>
+                                <input type="text" required placeholder="(주)쿼드링크 파트너스" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ql-cyan transition-colors text-sm">
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">연락처 *</label>
+                                <input type="tel" required placeholder="010-0000-0000" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ql-cyan transition-colors text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">이메일 주소 *</label>
+                                <input type="email" required placeholder="example@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ql-cyan transition-colors text-sm">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">관심 분야 선택</label>
+                            <select class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-slate-300 focus:outline-none focus:border-ql-cyan transition-colors text-sm">
+                                <option>화상회의 시스템 설계</option>
+                                <option>A/V 음향 및 영상 구축</option>
+                                <option>LED 디스플레이 전광판 시공</option>
+                                <option>상황실 구축 (통합관제)</option>
+                                <option>시스템 통합 유지보수</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-2">문의 내용을 입력해 주세요 *</label>
+                            <textarea required rows="4" placeholder="도입 희망 예산, 공간 규모, 희망 일정 등 세부 문의사항을 작성해 주세요." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-ql-cyan transition-colors text-sm resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-ql-blue to-ql-cyan hover:from-blue-600 hover:to-cyan-500 text-white font-bold text-base transition-all shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>문의 신청 제출하기</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 flex items-center justify-center shrink-0">
+                    <svg viewBox="0 0 200 200" class="w-full h-full">
+                        <path d="M 100 18 A 82 82 0 1 1 176 130 L 152 118 A 56 56 0 1 0 100 44 Z" fill="url(#silverRing)" />
+                        <path d="M 28 115 A 82 82 0 0 0 125 180 L 118 154 A 56 56 0 0 1 48 105 Z" fill="url(#blueRing)" />
+                        <polygon points="120,135 155,178 175,162 140,120" fill="url(#silverRing)" />
+                        <circle cx="100" cy="62" r="12" fill="url(#nodeCyan)"/>
+                        <circle cx="68" cy="95" r="12" fill="url(#nodeBlue)"/>
+                        <circle cx="100" cy="128" r="12" fill="url(#nodeCyan)"/>
+                        <circle cx="132" cy="95" r="11" fill="url(#nodeSilver)"/>
+                    </svg>
+                </div>
+                <div class="text-sm font-semibold text-slate-200">
+                    쿼드링크(주) | QuadLink Inc
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-500 text-center md:text-left">
+                (14303) 경기도 광명시 오리로651번길 8, 현대테라타워 741호 | Tel: 0504-407-7077 | Email: jb.bae@quadlink.kr<br>
+                Copyright © 2026 QuadLink Inc. All Rights Reserved.
+            </p>
+
+            <a href="#hero" class="w-10 h-10 rounded-full bg-slate-800 hover:bg-ql-blue text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-arrow-up text-sm"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- SUCCESS MODAL (Custom No-alert popup) -->
+    <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full mx-4 text-center shadow-2xl border border-slate-100 transform transition-all">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">문의 접수 완료</h3>
+            <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                성공적으로 문의가 전달되었습니다.<br>쿼드링크 담당 엔지니어가 빠르게 검토 후 연락해 드리겠습니다.
+            </p>
+            <button onclick="closeModal()" class="w-full py-3 rounded-xl bg-ql-blue text-white font-semibold hover:bg-blue-700 transition-colors">
+                확인
+            </button>
+        </div>
+    </div>
+
+    <!-- FLOATING AI CHATBOT WIDGET -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <!-- Chatbot Button -->
+        <button id="chatbotToggleBtn" onclick="toggleChatbot()" class="w-14 h-14 rounded-full bg-gradient-to-r from-ql-blue to-ql-cyan text-white shadow-2xl flex items-center justify-center hover:scale-105 transition-all pulse-ring">
+            <i class="fa-solid fa-comments text-xl"></i>
+        </button>
+
+        <!-- Chat Window Drawer -->
+        <div id="chatbotWindow" class="hidden absolute bottom-16 right-0 w-[90vw] sm:w-[380px] h-[520px] bg-slate-900 border border-slate-700/80 rounded-3xl shadow-2xl flex flex-col overflow-hidden backdrop-blur-xl">
+            <!-- Chat Header -->
+            <div class="p-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-full bg-ql-blue/30 border border-ql-cyan flex items-center justify-center text-ql-cyan">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-white text-sm">쿼드링크 AI 실시간 상담원</h4>
+                        <div class="flex items-center gap-1.5 text-[10px] text-emerald-400">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Gemini 3.1 AI Online
+                        </div>
+                    </div>
+                </div>
+                <button onclick="toggleChatbot()" class="text-slate-400 hover:text-white p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="chatMessages" class="flex-1 p-4 overflow-y-auto space-y-3.5 text-xs">
+                <!-- Bot Welcome Message -->
+                <div class="flex items-start gap-2.5">
+                    <div class="w-7 h-7 rounded-full bg-ql-blue text-white flex items-center justify-center text-xs shrink-0">
+                        QL
+                    </div>
+                    <div class="bg-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-none max-w-[82%] leading-relaxed border border-slate-700">
+                        안녕하세요! 쿼드링크(주) AI 기술 상담원입니다. 회의실 AV 구축, LED 전광판, 통합 상황실, 취급 장비 사양(Cisco, Poly, Logitech, Neat, Pexip)에 대해 궁금하신 점을 물어보세요!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <form id="chatForm" onsubmit="sendChatMessage(event)" class="p-3 bg-slate-950 border-t border-slate-800 flex items-center gap-2">
+                <input type="text" id="chatInput" placeholder="질문을 입력하세요..." class="flex-1 bg-slate-800 border border-slate-700 text-white rounded-xl px-3.5 py-2.5 text-xs focus:outline-none focus:border-ql-cyan">
+                <button type="submit" class="w-9 h-9 rounded-xl bg-ql-blue text-white flex items-center justify-center hover:bg-blue-600 transition-colors shrink-0">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Drawer Navigation Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            document.getElementById('successModal').classList.remove('hidden');
+            document.getElementById('contactForm').reset();
+        }
+
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        /* -------------------------------------------------------------
+         * GEMINI API INTEGRATION LOGIC
+         * ------------------------------------------------------------- */
+        const apiKey = ""; // Runtime auto-injected Gemini API key
+
+        // Helper function: Exponential backoff fetch
+        async function fetchWithRetry(url, options, maxRetries = 3) {
+            let delay = 1000;
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const res = await fetch(url, options);
+                    if (res.ok) return res;
+                } catch (e) {
+                    if (i === maxRetries - 1) throw e;
+                }
+                await new Promise(r => setTimeout(r, delay));
+                delay *= 2;
+            }
+            throw new Error('API Request failed after retries');
+        }
+
+        /* 1. GEMINI AI SMART CONSULTANT SOLUTION GENERATOR */
+        let currentGeneratedReportText = "";
+
+        async function generateAISolution(event) {
+            event.preventDefault();
+
+            const spaceType = document.getElementById('aiSpaceType').value;
+            const primaryPurpose = document.getElementById('aiPrimaryPurpose').value;
+            const budget = document.getElementById('aiBudget').value;
+            const customNotes = document.getElementById('aiCustomNotes').value;
+
+            document.getElementById('aiPlaceholder').classList.add('hidden');
+            document.getElementById('aiResultContainer').classList.add('hidden');
+            document.getElementById('aiReportFooter').classList.add('hidden');
+            document.getElementById('ttsPlayBtn').classList.add('hidden');
+            document.getElementById('aiLoading').classList.remove('hidden');
+
+            const systemPrompt = `당신은 ICT & AV 시스템 통합 전문기업 '쿼드링크(주) (QuadLink Inc)'의 수석 엔지니어입니다.
+고객이 입력한 회의실/상황실 정보에 따라 최적의 AV 및 네트워크 시스템 제안서를 한국어로 작성하세요.
+주요 취급 브랜드: Cisco, Poly, Logitech, Neat, Pexip 등.
+본사 정보: (14303) 경기도 광명시 오리로651번길 8, 현대테라타워 741호 / Tel: 0504-407-7077 / Email: jb.bae@quadlink.kr
+제안서 내용:
+1. 추천 핵심 장비 목록
+2. 음향 및 디스플레이 인프라 설계 포인트
+3. 쿼드링크 유지보수(SLA) 권장사항
+정돈된 불렛 포인트 형태의 마크다운 스타일 텍스트로 작성하세요.`;
+
+            const userPrompt = `공간 유형: ${spaceType}
+주요 목적: ${primaryPurpose}
+예산 규모: ${budget}
+추가 요청사항: ${customNotes || '없음'}`;
+
+            try {
+                // Call Gemini 3.1 Flash Text Model
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+                const payload = {
+                    contents: [{ parts: [{ text: userPrompt }] }],
+                    systemInstruction: { parts: [{ text: systemPrompt }] }
+                };
+
+                const res = await fetchWithRetry(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await res.json();
+                const reportText = data.candidates?.[0]?.content?.parts?.[0]?.text || "제안서를 생성할 수 없습니다.";
+                currentGeneratedReportText = reportText;
+
+                // Render Text
+                const formattedHtml = reportText
+                    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-amber-400 font-bold">$1</strong>')
+                    .replace(/^### (.*$)/gim, '<h4 class="text-base font-bold text-white mt-4 mb-2">$1</h4>')
+                    .replace(/^## (.*$)/gim, '<h3 class="text-lg font-bold text-amber-300 mt-5 mb-2">$1</h3>')
+                    .replace(/^\* (.*$)/gim, '<li class="ml-4 list-disc text-slate-300">$1</li>')
+                    .replace(/\n/g, '<br>');
+
+                document.getElementById('aiResultText').innerHTML = formattedHtml;
+                document.getElementById('aiLoading').classList.add('hidden');
+                document.getElementById('aiResultContainer').classList.remove('hidden');
+                document.getElementById('aiReportFooter').classList.remove('hidden');
+                document.getElementById('ttsPlayBtn').classList.remove('hidden');
+
+                // Generate AI Image (gemini-3.1-flash-lite-image)
+                generateAIConceptImage(spaceType, primaryPurpose);
+
+            } catch (err) {
+                console.error(err);
+                document.getElementById('aiLoading').classList.add('hidden');
+                document.getElementById('aiPlaceholder').classList.remove('hidden');
+                document.getElementById('aiPlaceholder').innerHTML = '<p class="text-red-400">제안서 생성 중 오류가 발생했습니다. 다시 시도해 주세요.</p>';
+            }
+        }
+
+        /* 2. AI CONCEPT IMAGE GENERATOR (gemini-3.1-flash-lite-image) */
+        async function generateAIConceptImage(spaceType, purpose) {
+            const imgBox = document.getElementById('aiImageBox');
+            const imgEl = document.getElementById('aiGeneratedImg');
+
+            imgBox.classList.remove('hidden');
+            imgEl.src = "https://placehold.co/800x450/0f172a/00A3FF?text=Generating+3D+AI+Concept+Render...";
+
+            const imagePrompt = `Modern realistic 3D architectural render of a high-tech corporate video conferencing room or control center. Room type: ${spaceType}, equipped with large display screens, neat wooden boardroom table, ceiling mic arrays, sleek blue lighting accent, professional interior design, 8k resolution detailed rendering.`;
+
+            try {
+                const imgApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-image:generateContent?key=${apiKey}`;
+                const payload = {
+                    contents: [{ parts: [{ text: imagePrompt }] }],
+                    generationConfig: {
+                        responseModalities: ['TEXT', 'IMAGE']
+                    }
+                };
+
+                const res = await fetchWithRetry(imgApiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await res.json();
+                const base64Data = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData)?.inlineData?.data;
+
+                if (base64Data) {
+                    imgEl.src = `data:image/png;base64,${base64Data}`;
+                }
+            } catch (e) {
+                console.warn('Image generation fallback', e);
+                imgEl.src = "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80";
+            }
+        }
+
+        /* 3. GEMINI TTS VOICE PLAYER (gemini-2.5-flash-preview-tts) */
+        let currentAudio = null;
+
+        async function playAITTS() {
+            if (!currentGeneratedReportText) return;
+
+            const icon = document.getElementById('ttsIcon');
+            const textSpan = document.getElementById('ttsText');
+
+            if (currentAudio && !currentAudio.paused) {
+                currentAudio.pause();
+                icon.className = "fa-solid fa-volume-high";
+                textSpan.innerText = "음성 리포트 듣기";
+                return;
+            }
+
+            icon.className = "fa-solid fa-spinner animate-spin";
+            textSpan.innerText = "음성 생성 중...";
+
+            const cleanText = currentGeneratedReportText.replace(/[*#]/g, '').slice(0, 300);
+
+            try {
+                const ttsApiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+                const payload = {
+                    contents: [{ parts: [{ text: `다음 제안서 요약을 또박또박 안내하세요: ${cleanText}` }] }],
+                    generationConfig: {
+                        responseModalities: ["AUDIO"],
+                        speechConfig: {
+                            prebuiltVoiceConfig: { voiceName: "Kore" }
+                        }
+                    }
+                };
+
+                const res = await fetchWithRetry(ttsApiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await res.json();
+                const inlinePart = data?.candidates?.[0]?.content?.parts?.[0]?.inlineData;
+
+                if (inlinePart && inlinePart.data) {
+                    const sampleRateMatch = inlinePart.mimeType.match(/rate=(\d+)/);
+                    const sampleRate = sampleRateMatch ? parseInt(sampleRateMatch[1], 10) : 24000;
+
+                    const pcmData = base64ToArrayBuffer(inlinePart.data);
+                    const pcm16 = new Int16Array(pcmData);
+                    const wavBlob = pcmToWav(pcm16, sampleRate);
+                    const audioUrl = URL.createObjectURL(wavBlob);
+
+                    currentAudio = new Audio(audioUrl);
+                    currentAudio.play();
+
+                    icon.className = "fa-solid fa-pause";
+                    textSpan.innerText = "일시정지";
+
+                    currentAudio.onended = () => {
+                        icon.className = "fa-solid fa-volume-high";
+                        textSpan.innerText = "음성 리포트 듣기";
+                    };
+                }
+            } catch (e) {
+                console.error("TTS Error:", e);
+                icon.className = "fa-solid fa-volume-high";
+                textSpan.innerText = "음성 재생 실패";
+            }
+        }
+
+        function base64ToArrayBuffer(base64) {
+            const binaryString = window.atob(base64);
+            const len = binaryString.length;
+            const bytes = new Uint8Array(len);
+            for (let i = 0; i < len; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            return bytes.buffer;
+        }
+
+        function pcmToWav(pcm16Array, sampleRate) {
+            const buffer = new ArrayBuffer(44 + pcm16Array.length * 2);
+            const view = new DataView(buffer);
+
+            function writeString(v, offset, str) {
+                for (let i = 0; i < str.length; i++) v.setUint8(offset + i, str.charCodeAt(i));
+            }
+
+            writeString(view, 0, 'RIFF');
+            view.setUint32(4, 36 + pcm16Array.length * 2, true);
+            writeString(view, 8, 'WAVE');
+            writeString(view, 12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true);
+            view.setUint16(22, 1, true);
+            view.setUint32(24, sampleRate, true);
+            view.setUint32(28, sampleRate * 2, true);
+            view.setUint16(32, 2, true);
+            view.setUint16(34, 16, true);
+            writeString(view, 36, 'data');
+            view.setUint32(40, pcm16Array.length * 2, true);
+
+            for (let i = 0; i < pcm16Array.length; i++) {
+                view.setInt16(44 + i * 2, pcm16Array[i], true);
+            }
+
+            return new Blob([view], { type: 'audio/wav' });
+        }
+
+        /* 4. INTERACTIVE FLOATING AI CHATBOT (gemini-3-flash-preview) */
+        let chatHistory = [];
+
+        function toggleChatbot() {
+            const win = document.getElementById('chatbotWindow');
+            win.classList.toggle('hidden');
+        }
+
+        async function sendChatMessage(e) {
+            e.preventDefault();
+            const input = document.getElementById('chatInput');
+            const userMsg = input.value.trim();
+            if (!userMsg) return;
+
+            input.value = '';
+            appendMessage('user', userMsg);
+
+            const loadingId = appendMessage('bot', '<i class="fa-solid fa-spinner animate-spin"></i> 답변을 작성 중입니다...');
+
+            const botSystemInstruction = `당신은 쿼드링크(주) (QuadLink Inc)의 실시간 AI 고객상담 전문가입니다.
+회사 정보:
+- 회사명: 쿼드링크(주) | QuadLink Inc
+- 업종: ICT 및 AV 시스템 통합 엔지니어링 (화상회의 시스템, A/V 시스템 구축, 고해상도 LED 디스플레이 전광판, 통합 상황실 구축, 시스템 통합 유지보수)
+- 글로벌 주요 파트너: Cisco, Poly, Logitech, Neat, Pexip
+- 본사 위치: (14303) 경기도 광명시 오리로651번길 8, 현대테라타워 741호
+- 고객 전용 문의처: Tel: 0504-407-7077 / Email: jb.bae@quadlink.kr
+- 연혁: 2026.09 쿼드링크 설립 (핵심 기술진 15년+ 엔지니어링 실무 역량 보유)
+- 필요 인재상: 전문성 (AV/ICT 기술 깊은 이해 및 문제해결), 소통 (고객 니즈 파악 및 협업), 책임감 (설계부터 구축 완수)
+
+고객의 문의에 친절하고 정중한 한국어로 정확하게 답변해 주세요.`;
+
+            chatHistory.push({ role: 'user', parts: [{ text: userMsg }] });
+
+            try {
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+                const payload = {
+                    contents: chatHistory,
+                    systemInstruction: { parts: [{ text: botSystemInstruction }] }
+                };
+
+                const res = await fetchWithRetry(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await res.json();
+                const botReply = data?.candidates?.[0]?.content?.parts?.[0]?.text || "죄송합니다. 답변을 불러오지 못했습니다.";
+
+                chatHistory.push({ role: 'model', parts: [{ text: botReply }] });
+                document.getElementById(loadingId).innerText = botReply;
+            } catch (err) {
+                console.error(err);
+                document.getElementById(loadingId).innerText = "죄송합니다. 네트워크 오류가 발생했습니다.";
+            }
+        }
+
+        function appendMessage(sender, text) {
+            const msgArea = document.getElementById('chatMessages');
+            const msgId = 'msg-' + Date.now();
+
+            const isUser = sender === 'user';
+            const wrapper = document.createElement('div');
+            wrapper.className = `flex items-start gap-2.5 ${isUser ? 'justify-end' : ''}`;
+
+            wrapper.innerHTML = isUser ? `
+                <div class="bg-ql-blue text-white p-3 rounded-2xl rounded-tr-none max-w-[82%] leading-relaxed">
+                    ${escapeHtml(text)}
+                </div>
+            ` : `
+                <div class="w-7 h-7 rounded-full bg-ql-blue text-white flex items-center justify-center text-xs shrink-0">QL</div>
+                <div id="${msgId}" class="bg-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-none max-w-[82%] leading-relaxed border border-slate-700">
+                    ${text}
+                </div>
+            `;
+
+            msgArea.appendChild(wrapper);
+            msgArea.scrollTop = msgArea.scrollHeight;
+            return msgId;
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+    </script>
+</body>
+</html>
