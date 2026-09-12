@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuadLink | 쿼드링크(주)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="font-sans text-gray-800 antialiased selection:bg-blue-200 scroll-smooth">
+
+    <!-- 상단 네비게이션 바 (화이트 배경) -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <img src="회사 로고 이미지.png" alt="QuadLink Logo" class="h-10 object-contain">
+            </a>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition">About Us</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600 transition">Services</a>
+                <a href="#solutions" class="text-gray-700 hover:text-blue-600 transition">Workspace</a>
+                <a href="#partners" class="text-gray-700 hover:text-blue-600 transition">Partners</a>
+                <a href="#careers" class="text-gray-700 hover:text-blue-600 transition">Careers</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+            </div>
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-bold transition shadow-lg">문의하기</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 bg-gradient-to-br from-blue-50 to-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+                연결의 완성, 비즈니스의 진화 <br><span class="text-blue-600">쿼드링크</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                풍부한 현장 경험과 노하우로 최적화된 화상회의 및 AV 시스템 환경을 구축합니다.
+            </p>
+        </div>
+    </header>
+
+    <!-- 회사 소개 (About Us) 복구 -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6 text-gray-900">회사 소개</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-6">
+                <strong>쿼드링크</strong>는 화상회의 및 네트워크 인프라 설계, 시공, 유지보수 전문 기업입니다.
+            </p>
+            <p class="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                다년간 축적된 현장 경험과 검증된 기술력을 통해, 고객의 비즈니스 환경에 최적화된 통합 AV 솔루션을 제공하여 업무 효율성을 극대화합니다.
+            </p>
+        </div>
+    </section>
+
+    <!-- 주요 서비스 (Services) 복구 -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">주요 서비스</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 서비스 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <i class="fas fa-video text-4xl text-blue-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">화상회의 시스템 설계</h3>
+                    <p class="text-gray-600">공간 규모와 업무 특성에 맞춘 최적의 화상회의 환경 구성</p>
+                </div>
+                <!-- 서비스 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <i class="fas fa-microphone-alt text-4xl text-blue-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">A/V 시스템 구축</h3>
+                    <p class="text-gray-600">회의실, 강당 등 다양한 공간 목적에 부합하는 고품질 영상 및 음향 시스템 설계 및 시공</p>
+                </div>
+                <!-- 서비스 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <i class="fas fa-tv text-4xl text-blue-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">LED 전광판 시공</h3>
+                    <p class="text-gray-600">선명한 화질과 뛰어난 내구성을 갖춘 맞춤형 고해상도 LED 디스플레이 솔루션 제공</p>
+                </div>
+                <!-- 서비스 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <i class="fas fa-desktop text-4xl text-blue-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">상황실 구축</h3>
+                    <p class="text-gray-600">실시간 모니터링과 신속한 의사결정을 지원하는 직관적인 통합 관제 환경 조성</p>
+                </div>
+                <!-- 서비스 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                    <i class="fas fa-tools text-4xl text-blue-600 mb-6"></i>
+                    <h3 class="text-xl font-bold mb-3">시스템 통합 유지보수</h3>
+                    <p class="text-gray-600">장애 발생을 예방하는 체계적인 사전 점검 및 신속한 사후 기술 지원</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workspace / 회의실 솔루션 섹션 (유지) -->
+    <section id="solutions" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">회의실 규모별 맞춤 설계 및 시공 솔루션</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+                <!-- 개인형 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-48 overflow-hidden bg-gray-200">
+                        <img src="개인.png" alt="개인형 회의실" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">1~2인 인원</span>
+                        <h3 class="text-xl font-bold mb-3">개인형 (Personal Room)</h3>
+                        <p class="text-gray-600 text-sm mb-4 h-16">임원실 및 개인 데스크 공간에 최적화된 올인원 터치 디스플레이와 노이즈 캔슬링 마이크 솔루션.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 border-t pt-4">
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>Cisco Desk / Neat Frame</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>원터치 회의 참가 및 화이트보드</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 소형 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-48 overflow-hidden bg-gray-200">
+                        <img src="소형.png" alt="소형 회의실" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <span class="bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">3~5인 소형</span>
+                        <h3 class="text-xl font-bold mb-3">소형 회의실 (Huddle Room)</h3>
+                        <p class="text-gray-600 text-sm mb-4 h-16">소규모 팀 협업을 위한 지능형 올인원 비디오바 및 무선 콘텐츠 공유 구축.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 border-t pt-4">
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>HP Poly / Cisco Room Bar</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>AI 프레임 줌 & 광각 카메라</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 중형 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-48 overflow-hidden bg-gray-200">
+                        <img src="중형.png" alt="중형 회의실" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <span class="bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">6~12인 중형</span>
+                        <h3 class="text-xl font-bold mb-3">중형 회의실 (Medium Room)</h3>
+                        <p class="text-gray-600 text-sm mb-4 h-16">광학 PTZ 카메라와 천장 매립형 마이크 연동 음향 아키텍처.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 border-t pt-4">
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>광학 PTZ 트래킹 카메라</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>음영 없는 천장 마이크 음향 보정</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 대형 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-sm border border-gray-100">
+                    <div class="h-48 overflow-hidden bg-gray-200">
+                        <img src="대형.png" alt="대형 이사회실" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <span class="bg-blue-800 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">15인 이상 대형</span>
+                        <h3 class="text-xl font-bold mb-3">대형 이사회실 & 강당</h3>
+                        <p class="text-gray-600 text-sm mb-4 h-16">멀티 디스플레이, DSP 음향 믹서 및 터치 패널 통합 자동 제어 시스템 설계.</p>
+                        <ul class="text-sm text-gray-500 space-y-2 border-t pt-4">
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>대형 비디오월 & 라인어레이 스피커</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i>원터치 시나리오 자동 통합제어</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 취급 제품 (Partners) - 요청하신 4개사 로고 적용 -->
+    <section id="partners" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6 text-gray-900">취급 제품 및 브랜드 파트너십</h2>
+            <p class="text-gray-600 mb-12 max-w-2xl mx-auto">세계 최고 수준의 검증된 브랜드 장비만을 취급하여 무결점 시스템을 구축합니다.</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex justify-center items-center h-32">
+                    <img src="poly.png" alt="HP Poly" class="max-h-16 object-contain">
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex justify-center items-center h-32">
+                    <img src="cisco.png" alt="CISCO" class="max-h-16 object-contain">
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex justify-center items-center h-32">
+                    <img src="yealink.png" alt="Yealink" class="max-h-16 object-contain">
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex justify-center items-center h-32">
+                    <img src="neat.png" alt="neat" class="max-h-16 object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 실적 및 연혁 (History/Work) 복구 포함 -->
+    <section id="work" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-6 text-gray-900">실적 및 회사 연혁</h2>
+            
+            <!-- 연혁 복구 -->
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <p class="text-gray-600 mb-4">다수의 기업 및 기관 프로젝트의 성공적 수행을 통한 실무 역량 검증</p>
+                <div class="inline-block bg-blue-50 text-blue-800 font-bold px-6 py-3 rounded-lg border border-blue-100">
+                    [2026.09] ICT·AV 엔지니어링 전문 기업 쿼드링크 설립
+                </div>
+                <p class="text-sm text-gray-400 mt-3">※ 세부 프로젝트 구축 사례는 추후 업데이트 예정</p>
+            </div>
+
+            <!-- 실적 이미지 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="스마트 화상 회의실 구축.png" alt="스마트 화상 회의실 구축" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">Smart Video Conference</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">스마트 화상 회의실 구축</h3>
+                        <p class="text-gray-600 leading-relaxed">최신 4K Ultra HD 카메라, 천장 매립형 음향 시스템(Ceiling Mic) 및 MS Teams / Zoom 연동 올인원 화상회의 구축.</p>
+                    </div>
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                    <div class="relative h-64 overflow-hidden bg-gray-200">
+                        <img src="AV시스템.png" alt="AV시스템" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full">Control Room Integration</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">AV시스템 (상황실/관제센터) 시공</h3>
+                        <p class="text-gray-600 leading-relaxed">24/7 실시간 관제를 위한 고해상도 비디오월, 심리스 메트릭스 스위처 및 터치 기반 통합 제어 인프라 구축.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 필요 인재상 (Careers) 복구 -->
+    <section id="careers" class="py-20 bg-gray-50 border-t border-gray-200">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">필요 인재상</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">전문성 (Expertise)</h3>
+                    <p class="text-gray-600">AV/ICT 기술에 대한 깊은 이해와 문제 해결 능력</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">소통 (Communication)</h3>
+                    <p class="text-gray-600">고객의 니즈를 파악하고 팀원과 협업하는 소통 능력</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center border border-gray-100">
+                    <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">책임감 (Responsibility)</h3>
+                    <p class="text-gray-600">현장 설계부터 구축까지 완수하는 책임감</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 문의 및 연락처 (Contact Us) 복구 -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-3xl font-bold text-center mb-16 text-gray-900">고객 문의</h2>
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- 회사 정보 -->
+                <div class="flex-1 bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-blue-600 text-xl mt-1 w-8"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">본사 위치</h4>
+                                <p class="text-gray-600">(14303) 경기도 광명시 오리로651번길 8, 현대테라타워광명 741호</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-blue-600 text-xl mt-1 w-8"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">고객 지원</h4>
+                                <p class="text-gray-600">0504-407-7077</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-blue-600 text-xl mt-1 w-8"></i>
+                            <div>
+                                <h4 class="font-bold text-gray-900">이메일</h4>
+                                <p class="text-gray-600">jb.bae@quadlink.kr</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 문의 폼 -->
+                <div class="flex-1">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold mb-2">온라인 문의</h3>
+                        <p class="text-gray-600 text-sm">"도입을 원하시는 시스템이나 궁금한 점을 남겨주시면 신속하고 정확하게 답변해 드리겠습니다."</p>
+                    </div>
+                    <form action="mailto:jb.bae@quadlink.kr" method="POST" enctype="text/plain" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">회사명 / 담당자명</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">연락처</label>
+                            <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">문의 내용</label>
+                            <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                            문의 접수하기
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 하단 푸터 (화이트 배경 및 로고 좌측 배치 유지) -->
+    <footer class="bg-white border-t border-gray-200 text-gray-600 py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+                <!-- 좌측: 회사 로고 및 카피라이트 -->
+                <div class="flex-1">
+                    <img src="회사 로고 이미지.png" alt="QuadLink Logo" class="h-10 object-contain mb-4">
+                    <p class="text-sm text-gray-500 mb-6">연결의 완성, 비즈니스의 진화, 쿼드링크</p>
+                    <div class="text-sm text-gray-400">
+                        &copy; 2026. QuadLink Inc. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
